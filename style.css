@@ -18,6 +18,11 @@ body {
   box-sizing: inherit;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   max-width: 2016px;
   padding: 0 16px;
@@ -46,6 +51,7 @@ body {
 
 #switch-page {
   margin-right: auto;
+  cursor: pointer;
 }
 
 .icon {
@@ -56,6 +62,17 @@ body {
   height: 48px;
   border-radius: 100vw;
   cursor: pointer;
+}
+
+.finder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row-reverse;
+}
+
+.finder input {
+  display: none;
 }
 
 .icon:hover {
@@ -164,7 +181,7 @@ img {
 #switch-page {
   display: flex;
   align-items: center;
-  padding: 14px;
+  padding: 16px;
 }
 
 #switch-page:hover {
@@ -287,15 +304,97 @@ input:focus {
   cursor: pointer;
 }
 
+#btn-hoy {
+  display: none;
+}
+
+.finder.small-input {
+  width: 100%;
+}
+
+.finder.small-input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 100vw;
+  font-family: 'Oxygen';
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.finder.small-input svg {
+  display: none;
+}
+
+.finder.small-input input {
+  padding-left: 16px;
+}
+
 @media screen and (min-width: 536px) {
   :root {
     --cols: 2;
+  }
+
+  #switch-page {
+    margin-right: 0;
+  }
+
+  .finder {
+    width: 100%;
+    background-color: #76767611;
+  }
+
+  .finder svg {
+    margin-left: 16px;
+    cursor: default;
+  }
+
+  .finder input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 100vw;
+    font-family: 'Oxygen';
+    background-color: transparent;
+    font-size: 16px;
+  }
+
+  .finder input:focus ~ svg {
+    display: none;
+  }
+
+  .finder input:focus {
+    padding-left: 16px;
   }
 }
 
 @media screen and (min-width: 788px) {
   :root {
     --cols: 3;
+  }
+
+  #switch-page {
+    background-color: black;
+    color: white;
+    border-radius: 100vw;
+    margin-right: 0;
+  }
+
+  #switch-page:hover {
+    background-color: black;
+    color: white;
+  }
+
+  #switch-page .arrow {
+    display: none;
+  }
+
+  #btn-hoy {
+    display: block;
+    padding: 16px;
+    color: black;
   }
 }
 

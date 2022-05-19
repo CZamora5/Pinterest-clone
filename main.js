@@ -8,6 +8,11 @@ window.addEventListener('resize', () => {
   let currCols = cols;
   cols = Number(getComputedStyle(document.documentElement).getPropertyValue('--cols'));
   if (currCols != cols) remakeGrid();
+  if (cols >= 2) {
+    document.querySelector('.finder').classList.remove('small-input');
+    // document.querySelector('#switch-page').style.marginRight = 'auto';
+    document.querySelector('#switch-page').style.display = 'flex';
+  }
 });
 
 function remakeGrid() {
@@ -52,7 +57,6 @@ function createCardImg(n) {
 
 const buttons = [
   document.querySelector('#switch-page'),
-  document.querySelector('.finder'),
   document.querySelector('#add-pin'),
   document.querySelector('#notifications'),
   document.querySelector('#message'),
@@ -60,6 +64,13 @@ const buttons = [
   document.querySelector('#more-options')
 ];
 
+document.querySelector('.finder').addEventListener('click', () => {
+  if (cols < 2) {
+    document.querySelector('.finder').classList.add('small-input');
+    // document.querySelector('#switch-page').style.marginRight = '0';
+    document.querySelector('#switch-page').style.display = 'none';
+  }
+});
 
 document.querySelector('#add-pin-modal').addEventListener('click', () => {
   buttons[2].classList.add('active');
@@ -89,4 +100,7 @@ function removeActive() {
   buttons.forEach(button => {
     button.classList.remove('active');
   });
+  document.querySelector('.finder').classList.remove('small-input');
+  // document.querySelector('#switch-page').style.marginRight = 'auto';
+  document.querySelector('#switch-page').style.display = 'flex';
 }
