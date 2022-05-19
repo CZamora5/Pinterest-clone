@@ -11,10 +11,20 @@ body {
   box-sizing: inherit;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.zoom {
+  cursor: zoom-in;
+}
 
 .card-image {
-  width: 236px;
+  position: relative;
+  width: 252px;
   height: auto;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 img {
@@ -22,4 +32,18 @@ img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
+}
+
+.card-image__hover {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  height: 100%;
+  width: 236px;
+  left: 8px;
+  top: 0;
+}
+
+.card-image:hover > .card-image__hover {
+  display: block;
 }
