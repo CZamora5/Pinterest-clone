@@ -49,3 +49,44 @@ function createCardImg(n) {
   `;
   return cardImg;
 }
+
+const buttons = [
+  document.querySelector('#switch-page'),
+  document.querySelector('.finder'),
+  document.querySelector('#add-pin'),
+  document.querySelector('#notifications'),
+  document.querySelector('#message'),
+  document.querySelector('#profile-img'),
+  document.querySelector('#more-options')
+];
+
+
+document.querySelector('#add-pin-modal').addEventListener('click', () => {
+  buttons[2].classList.add('active');
+});
+
+document.querySelector('#notifications-modal').addEventListener('click', () => {
+  buttons[3].classList.add('active');
+});
+
+document.querySelector('#message-modal').addEventListener('click', () => {
+  buttons[4].classList.add('active');
+});
+
+document.querySelector('#more-options-modal').addEventListener('click', () => {
+  buttons[6].classList.add('active');
+});
+
+document.addEventListener('click', () => removeActive(), true);
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.add('active');
+  });
+});
+
+function removeActive() {
+  buttons.forEach(button => {
+    button.classList.remove('active');
+  });
+}

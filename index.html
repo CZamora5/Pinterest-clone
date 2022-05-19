@@ -22,12 +22,8 @@
       </div>
     </a>
     <div id="switch-page">
-      <span>Inicio</span>
-      <div class="icon">
-        <svg style="width:16px;height:16px" viewBox="0 0 24 24">
-          <path fill="#767676" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-        </svg>
-      </div>
+      <div id="btn-inicio">Inicio</div>
+      <div class="arrow"></div>
     </div>
     <div class="finder icon">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -41,12 +37,24 @@
         <path fill="#767676" d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
       </svg>
     </div>
+    <div class="modal" id="add-pin-modal">
+      <div>Crear un Idea Pin</div>
+      <div>Crear Pin</div>
+    </div>
     <div class="icon" id="notifications">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path 
           fill="#767676" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21"
         />
-    </svg>
+      </svg>
+    </div>
+    <div class="modal" id="notifications-modal">
+      <div style="margin-bottom: auto; padding: 15px 0;">Actualizaciones</div>
+      <img src="./assets/img/noti.png" width="180px" alt="notification bell" style="margin: auto; padding: 8px 0;">
+      <div><h3>Nada nuevo por aquí (aún)</h3></div>
+      <div style="font-weight: 400; font-size: 14px; padding: 4px 32px; margin-bottom: auto;">
+        Intenta explorar tu feed de inicio, crear un tablero o seguir a alguien que tenga ideas que te inspiren.
+      </div>
     </div>
     <div class="icon" id="message">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -55,17 +63,45 @@
         />
       </svg>
     </div>
-    <div class="icon" id="profile-img">
+    <div class="modal" id="message-modal">
+      <div style="height: 64px; padding: 8px; text-align: center;">Bandeja de entrada</div>
+      <div style="padding: 0 8px;">
+        <div><h2>Comparte ideas con amigos</h2></div>
+        <input type="text" placeholder="Buscar por nombre o correo">
+      </div>
+    </div>
+    <div class="icon" id="profile-img" title="CARLOS URIEL ZAMORA ORTEGA">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           fill="#767676" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
         />
       </svg>
     </div>
-    <div class="icon" id="more-options">
-      <svg style="width:16px;height:16px" viewBox="0 0 24 24">
-        <path fill="#767676" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-      </svg>
+    <div class="arrow" id="more-options" style="cursor: pointer;"></div>
+    <div class="modal" id="more-options-modal">
+      <div style="font-size: 10; font-weight: 400;"><small>Actualmente en</small></div>
+      <div class="hover" style="display: flex;">
+        <div style="display:flex; align-items: center; justify-content: center; font-size: 24; background-color: #76767622; border-radius: 50%; width: 60px; height: 60px; margin-right: 12px;">C</div>
+        <div>
+          <div>CARLOS URIEL ZAMORA ORTEGA</div>
+          <div style="font-size: 10; font-weight: 400;"><small>Personal</small></div>
+          <div style="font-size: 10; font-weight: 400;"><small>czamora5@ucol.mx</small></div>
+        </div>
+      </div>
+      <div class="options-info">
+        <div style="font-size: 10; font-weight: 400;"><small>Tus cuentas</small></div>
+        <div class="hover">Agregar cuenta</div>
+        <div class="hover">Convertir en cuenta para empresa</div>
+      </div>
+      <div class="options-info">
+        <div style="font-size: 10; font-weight: 400;"><small>Más opciones</small></div>
+        <div class="hover">Configuración</div>
+        <div class="hover">Mejora tu feed de inicio</div>
+        <div class="hover">Instala la aplicación de Windows</div>
+        <div class="hover">Obtener ayuda</div>
+        <div class="hover">Ver condiciones de privacidad</div>
+        <div class="hover">Salir</div>
+      </div>
     </div>
   </nav>
   <main class="container" id="content"></main>
